@@ -82,12 +82,12 @@ export function PostCard({ post }: PostCardProps) {
   };
 
   return (
-    <article className="border-b border-border animate-fade-in">
+    <article className="glass-card mb-6 rounded-3xl overflow-hidden animate-fade-in mx-4 mt-2">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="story-ring w-9 h-9">
-            <div className="bg-background rounded-full p-[2px] w-full h-full">
+            <div className="bg-black rounded-full p-[2px] w-full h-full">
               <img
                 src={post.user.avatar}
                 alt={post.user.username}
@@ -97,7 +97,7 @@ export function PostCard({ post }: PostCardProps) {
           </div>
           <div>
             <div className="flex items-center gap-1">
-              <span className="font-semibold text-sm">{post.user.username}</span>
+              <span className="font-semibold text-sm text-white">{post.user.username}</span>
               {post.user.isVerified && (
                 <BadgeCheck className="w-4 h-4 text-primary fill-primary" />
               )}
@@ -248,8 +248,8 @@ export function PostCard({ post }: PostCardProps) {
         </p>
 
         {/* Caption */}
-        <p className="text-sm">
-          <span className="font-semibold mr-1">{post.user.username}</span>
+        <p className="text-sm text-white/90">
+          <span className="font-semibold mr-1 text-white">{post.user.username}</span>
           {post.caption}
         </p>
 

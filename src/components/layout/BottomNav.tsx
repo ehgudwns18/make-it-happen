@@ -16,9 +16,9 @@ export function BottomNav() {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border bottom-nav-safe">
-      <div className="container max-w-lg mx-auto">
-        <div className="flex items-center justify-around py-2">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 p-4 bottom-nav-safe pointer-events-none">
+      <div className="container max-w-sm mx-auto pointer-events-auto">
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-around py-3 px-2 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             const Icon = item.icon;
@@ -55,8 +55,8 @@ export function BottomNav() {
                 key={item.path}
                 onClick={() => navigate(item.path)}
                 className={cn(
-                  "flex flex-col items-center gap-0.5 p-2 transition-all",
-                  isActive ? "scale-105" : "opacity-70"
+                  "flex flex-col items-center gap-0.5 p-2 transition-all text-white",
+                  isActive ? "scale-110 opacity-100" : "opacity-60 hover:opacity-100"
                 )}
                 aria-label={item.label}
               >
